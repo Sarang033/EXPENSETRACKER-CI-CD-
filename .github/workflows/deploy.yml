@@ -55,5 +55,4 @@ jobs:
           script: |
             docker pull sarang033/backend:latest
             docker pull sarang033/frontend:latest
-            docker-compose down
-            docker-compose up -d
+            MONGO_URI=${{ secrets.MONGO_URI }} JWT_SECRET=${{ secrets.JWT_SECRET }} docker-compose up -d
